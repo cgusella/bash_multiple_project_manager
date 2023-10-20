@@ -1,29 +1,46 @@
 # bash_multiple_project_manager
 
-**Descrption:**
-Manage multiple git projects in a Debian-based linux terminal.
+**Description:**
+Manage multiple git projects in a Debian-based Linux terminal.
+
+## Notice
+This script uses the `whiptail` command, which is native in all Debian-based Linux distros. Please check if your system has `whiptail` installed by running the following command in a terminal:
+
+```bash
+whiptail --help
+```
 
 ## What it does
 
-This application allows you to choose between all git projects you have inside some folder and, at the same time and for all the project you have chosen
-* add new branch
-* delete a branch
-* checkout branch
-* update projects
-* prune from all non-local branches
-* commit and push.
+This application allows you to choose from all the git projects you have inside a specific folder. Simultaneously, for the selected projects, you can:
+
+* Add a new branch
+* Delete a branch
+* Checkout a branch
+* Update projects
+* Prune all non-local branches
+* Commit and push.
+
+Unlike other options, the fifth one enables you to clean your local repositories from branches that exist in the remote repository but not locally. This is useful when you want to remove unused branches from the local project. However, please be cautious: if you create a local branch and then launch the prune command, you will delete it.
 
 ## How to use it
 
-This bash script manages git projects inside some folder.
+This bash script manages git projects within a specified folder.
 
-Save this script inside that folder to see the git projects you want to manage.
+To use it:
 
-Make the script executable and launch it.
+1. Save this script inside the folder containing the git projects you want to manage.
+2. Make the script executable by running: 
+
+```bash
+chmod +x git-multi-project-manager.sh
+```
+
+3. Launch the script.
 
 ## Tips
-Since there is no a vertical scrollbar, if you have many projects to display you can only enlarge you terminal window.
+Since there is no vertical scrollbar, if you have many projects to display, you may need to enlarge your terminal window.
 
-It is not a satisfactory solution, but I'm working on it.
+While not a perfect solution, I am actively working on improving this.
 
-All changes are local, so you are not affecting any file on remote repos.
+All changes are local, so you are not affecting any files in remote repositories.
